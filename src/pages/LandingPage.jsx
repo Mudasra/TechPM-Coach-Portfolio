@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../sections/Navbar/Navbar'
+import Hero from '../sections/Hero/Hero'
 
 const LandingPage = () => {
   return (
     <>
     <main>
-
+        <Hero />
     </main>
     </>
   )
