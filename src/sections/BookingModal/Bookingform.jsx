@@ -1,5 +1,5 @@
+// components/BookingForm.jsx
 import React from "react";
-import Field from "./Field";
 import SubmitButton from "./SubmitButton";
 
 const BookingForm = ({
@@ -8,108 +8,120 @@ const BookingForm = ({
   errors,
   apiError,
   isLoading,
-  firstFieldRef,
   onChange,
   onBlur,
   onSubmit,
 }) => {
   const inputClass = (field) =>
-    `field-input${touched[field] && errors[field] ? " has-error" : ""}`;
+    `form-input${touched[field] && errors[field] ? " err" : ""}`;
+
+  const selectClass = () =>
+    `form-select${form.experience ? " has-value" : ""}${
+      touched.experience && errors.experience ? " err" : ""
+    }`;
 
   return (
-    <div className="modal-body">
-      <form onSubmit={onSubmit} noValidate>
-
-        <Field id="name" label="Full Name" required touched={touched.name} error={errors.name}>
+    <form onSubmit={onSubmit} noValidate>
+      {/* Name + Email */}
+      <div className="field-row">
+        <div className="form-field">
+          <label className="form-label" htmlFor="bm-name">
+            Full Name <span>*</span>
+          </label>
           <input
-            ref={firstFieldRef}
-            id="name"
-            name="name"
-            type="text"
-            value={form.name}
-            onChange={onChange}
-            onBlur={onBlur}
+            id="bm-name" name="name" type="text"
+            value={form.name} onChange={onChange} onBlur={onBlur}
             placeholder="Jane Smith"
             className={inputClass("name")}
             aria-invalid={touched.name && !!errors.name}
-            aria-describedby={touched.name && errors.name ? "name-err" : undefined}
+            aria-describedby={touched.name && errors.name ? "err-name" : undefined}
           />
-        </Field>
+          {touched.name && errors.name && (
+            <p className="form-error" id="err-name">{errors.name}</p>
+          )}
+        </div>
 
-        <Field id="email" label="Work Email" required touched={touched.email} error={errors.email}>
+        <div className="form-field">
+          <label className="form-label" htmlFor="bm-email">
+            Work Email <span>*</span>
+          </label>
           <input
-            id="email"
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={onChange}
-            onBlur={onBlur}
+            id="bm-email" name="email" type="email"
+            value={form.email} onChange={onChange} onBlur={onBlur}
             placeholder="jane@company.com"
             className={inputClass("email")}
             aria-invalid={touched.email && !!errors.email}
           />
-        </Field>
+          {touched.email && errors.email && (
+            <p className="form-error">{errors.email}</p>
+          )}
+        </div>
+      </div>
 
-        <Field id="role" label="Current Job Title" required touched={touched.role} error={errors.role}>
+      {/* Role + Experience */}
+      <div className="field-row">
+        <div className="form-field">
+          <label className="form-label" htmlFor="bm-role">
+            Current Title <span>*</span>
+          </label>
           <input
-            id="role"
-            name="role"
-            type="text"
-            value={form.role}
-            onChange={onChange}
-            onBlur={onBlur}
-            placeholder="e.g. Senior Marketing Manager"
+            id="bm-role" name="role" type="text"
+            value={form.role} onChange={onChange} onBlur={onBlur}
+            placeholder="Sr. Marketing Manager"
             className={inputClass("role")}
           />
-        </Field>
+          {touched.role && errors.role && (
+            <p className="form-error">{errors.role}</p>
+          )}
+        </div>
 
-        <Field
-          id="experience"
-          label="Years of Marketing Experience"
-          required
-          touched={touched.experience}
-          error={errors.experience}
-        >
+        <div className="form-field">
+          <label className="form-label" htmlFor="bm-exp">
+            Years in Marketing <span>*</span>
+          </label>
           <select
-            id="experience"
-            name="experience"
-            value={form.experience}
-            onChange={onChange}
-            onBlur={onBlur}
-            className={inputClass("experience")}
+            id="bm-exp" name="experience"
+            value={form.experience} onChange={onChange} onBlur={onBlur}
+            className={selectClass()}
           >
-            <option value="">Select level</option>
+            <option value="">Select range</option>
             <option value="2-4">2–4 years</option>
             <option value="5-7">5–7 years</option>
             <option value="8-10">8–10 years</option>
             <option value="10+">10+ years</option>
           </select>
-        </Field>
+          {touched.experience && errors.experience && (
+            <p className="form-error">{errors.experience}</p>
+          )}
+        </div>
+      </div>
 
-        <div className="form-divider" aria-hidden="true" />
+      {/* Goal */}
+      <div className="form-field">
+        <label className="form-label" htmlFor="bm-goal">
+          Your #1 goal from this call
+          <span style={{ color: "#2A2F3B", marginLeft: "4px", textTransform: "none", letterSpacing: 0 }}>
+            (optional)
+          </span>
+        </label>
+        <textarea
+          id="bm-goal" name="goal" rows={3}
+          value={form.goal} onChange={onChange}
+          placeholder="e.g. I want to understand if I'm a real candidate for PM roles and what to focus on first…"
+          className="form-textarea"
+        />
+      </div>
 
-        <Field id="goal" label="Your #1 Goal From This Call" optional>
-          <textarea
-            id="goal"
-            name="goal"
-            rows={3}
-            value={form.goal}
-            onChange={onChange}
-            placeholder="e.g. I want to know if I'm a realistic PM candidate and what to focus on first…"
-            className="field-input"
-            style={{ resize: "none" }}
-          />
-        </Field>
+      {apiError && (
+        <div className="api-error" role="alert">{apiError}</div>
+      )}
 
-        {apiError && (
-          <div className="api-error" role="alert">{apiError}</div>
-        )}
+      <div className="form-divider" aria-hidden="true" />
 
-        <SubmitButton isLoading={isLoading} />
+      <SubmitButton isLoading={isLoading} />
 
-        <p className="form-fine-print">No spam · No obligation · Cancel anytime</p>
-      </form>
-    </div>
+      <p className="form-note">No spam · No obligation · Unsubscribe anytime</p>
+    </form>
   );
 };
 

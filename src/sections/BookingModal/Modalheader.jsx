@@ -1,27 +1,31 @@
+// components/ModalHeader.jsx
 import React from "react";
 
-const TRUST_PILLS = ["✓ 100% Free", "✓ Personalized Plan", "✓ No Pitch"];
+const TRUST_ITEMS = ["Custom Action Plan", "No Sales Pitch", "Instant Confirmation"];
 
 const ModalHeader = () => (
   <div className="modal-header">
-    <div className="modal-eyebrow" aria-hidden="true">
-      <div className="me-line" />
-      <span className="me-text">Free · No Obligation</span>
+    <div className="modal-badge">
+      <span className="modal-badge-dot" aria-hidden="true" />
+      Free · No Strings Attached
     </div>
 
-    <h2 id="modal-title" className="modal-title">
-      Book Your Free <em>Career</em>
+    <h2 className="modal-title" id="modal-title">
+      Book Your <em>Free</em>
       <br />
       Strategy Call
     </h2>
 
     <p className="modal-subtitle">
-      45 minutes · Custom action plan · Zero sales pressure
+      <strong>45 minutes.</strong> Custom roadmap. <strong>Zero pressure.</strong>
     </p>
 
-    <div className="modal-trust-pills" aria-label="Call benefits">
-      {TRUST_PILLS.map((t) => (
-        <span key={t} className="mtp">{t}</span>
+    <div className="trust-strip" aria-label="Call features">
+      {TRUST_ITEMS.map((t) => (
+        <span key={t} className="trust-item">
+          <span className="trust-check" aria-hidden="true">◆</span>
+          {t}
+        </span>
       ))}
     </div>
   </div>
