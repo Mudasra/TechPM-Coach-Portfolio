@@ -180,7 +180,7 @@ export const HERO_STYLES = `
 }
 .pc-name { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; color: #C0BAB0; }
 .pc-role { font-size: 0.65rem; color: #454B5C; margin-top: 2px; }
-.pc-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.85rem; color: #5A6070; line-height: 1.55; }
+.pc-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.85rem; color: #8A93A8; line-height: 1.55; }
 .pc-stars { margin-top: 0.6rem; font-size: 0.7rem; color: #D4AF37; letter-spacing: 2px; }
 
 .spots-pill {
