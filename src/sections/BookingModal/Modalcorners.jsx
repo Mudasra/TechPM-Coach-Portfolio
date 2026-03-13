@@ -1,4 +1,3 @@
-// components/ModalCorners.jsx
 import React from "react";
 
 const ModalCorners = () => (

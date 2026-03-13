@@ -1,4 +1,3 @@
-// components/ModalHeader.jsx
 import React from "react";
 
 const TRUST_PILLS = ["✓ 100% Free", "✓ Personalized Plan", "✓ No Pitch"];

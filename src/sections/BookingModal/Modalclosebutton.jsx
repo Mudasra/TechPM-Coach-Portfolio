@@ -1,4 +1,3 @@
-// components/ModalCloseButton.jsx
 import React from "react";
 
 const ModalCloseButton = ({ onClick, disabled }) => (

@@ -1,4 +1,3 @@
-// BookingModal.jsx  —  orchestrator (pure wiring, zero UI here)
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

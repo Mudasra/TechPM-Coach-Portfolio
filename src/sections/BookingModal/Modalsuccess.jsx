@@ -1,4 +1,3 @@
-// components/ModalSuccess.jsx
 import React from "react";
 
 const ModalSuccess = () => (

@@ -1,4 +1,3 @@
-// components/SubmitButton.jsx
 import React from "react";
 
 const SubmitButton = ({ isLoading }) => (

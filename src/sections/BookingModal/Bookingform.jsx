@@ -1,4 +1,3 @@
-// components/BookingForm.jsx
 import React from "react";
 import Field from "./Field";
 import SubmitButton from "./SubmitButton";
