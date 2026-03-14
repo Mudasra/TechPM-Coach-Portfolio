@@ -1,5 +1,5 @@
 import React from "react";
-import PrepItem from "./PrepItem";
+import PrepItem from "./Prepitem";
 
 const CORNER_STYLES = [
   { top: -1, left: -1, borderWidth: "1px 0 0 1px" },
@@ -68,7 +68,7 @@ const WhileYouWait = ({ visible }) => (
 
     <div className="grid md:grid-cols-2 gap-4">
       {prepItems.map((item, i) => (
-        <PrepItem key={i} label={item.label} desc={item.desc} />
+        <prepItem key={i} label={item.label} desc={item.desc} />
       ))}
     </div>
   </div>
