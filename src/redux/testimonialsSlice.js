@@ -11,7 +11,7 @@ const mockTestimonials = [
     timeframe: "5 months",
     salaryIncrease: "+$42K",
     quote:
-      "I was stuck in traditional marketing for 7 years with zero tech background. This program gave me the exact roadmap — from understanding APIs to acing PM interviews. I got 3 offers and chose Stripe. Life-changing doesn't even cover it.",
+      "I was stuck in traditional marketing for 7 years with zero tech background. This program gave me the exact roadmap, from understanding APIs to acing PM interviews. I got 3 offers and chose Stripe. Life-changing doesn't even cover it.",
     rating: 5,
     color: "from-violet-500 to-indigo-600",
   },

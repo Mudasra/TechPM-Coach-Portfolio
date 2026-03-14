@@ -2,7 +2,7 @@ const NavLogo = () => (
   <a
     href="/"
     className="nav-logo"
-    aria-label="Jordan Mitchell Coaching — home"
+    aria-label="Jordan Mitchell Coaching, home"
   >
     <div className="nav-logo-mark" aria-hidden="true">
       JM

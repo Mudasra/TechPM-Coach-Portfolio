@@ -7,7 +7,7 @@ const FooterBrand = () => (
       <span className="logo-name">Jordan Mitchell</span>
     </div>
     <p className="footer-tagline">
-      Helping marketing professionals land their first tech PM role — without a CS degree.
+      Helping marketing professionals land their first tech PM role, without a CS degree.
     </p>
     <div className="footer-socials" aria-label="Social media links">
       {socials.map((s) => (

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export function SEOHead() {
   useEffect(() => {
     document.title =
-      "Jordan Mitchell Coaching — Marketing to Tech PM in 6 Months";
+      "Jordan Mitchell Coaching, Marketing to Tech PM in 6 Months";
 
     const setMeta = (name, content, attr = "name") => {
       let tag = document.querySelector(`meta[${attr}="${name}"]`);
@@ -29,7 +29,7 @@ export function SEOHead() {
 
     setMeta(
       "og:title",
-      "Marketing to Tech PM in 6 Months — Jordan Mitchell Coaching",
+      "Marketing to Tech PM in 6 Months , Jordan Mitchell Coaching",
       "property"
     );
 

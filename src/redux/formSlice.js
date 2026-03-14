@@ -4,11 +4,8 @@ export const submitLeadForm = createAsyncThunk(
   "form/submit",
   async (formData, { rejectWithValue }) => {
     try {
-      // Simulated API call — replace with real endpoint
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      // Simulate occasional error for testing: uncomment below
-      // if (Math.random() < 0.1) throw new Error("Network error");
-      return { ...formData, submittedAt: new Date().toISOString() };
+          return { ...formData, submittedAt: new Date().toISOString() };
     } catch (error) {
       return rejectWithValue(error.message);
     }

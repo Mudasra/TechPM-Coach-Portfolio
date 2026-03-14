@@ -9,7 +9,7 @@ const PainHeader = ({ visible }) => (
       The <em>3 Walls</em> Every<br />Marketing Pro Hits
     </h2>
     <p className="pain-sub">
-      If any of these feel painfully familiar, you're not alone — and there's a proven way through all three.
+      If any of these feel painfully familiar, you're not alone, and there's a proven way through all three.
     </p>
   </div>
 );

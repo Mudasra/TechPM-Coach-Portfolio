@@ -80,7 +80,7 @@ const Navbar = () => {
           {/* Always visible */}
           <NavLogo />
 
-          {/* Landing page only — full nav */}
+          {/* Landing page only , full nav */}
           {isLandingPage && (
             <>
               <DesktopNav navLinks={navLinks} onNavClick={handleNavClick} />
@@ -98,7 +98,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile drawer — landing page only */}
+      {/* Mobile drawer , landing page only */}
       {isLandingPage && (
         <MobileDrawer
           menuOpen={menuOpen}

@@ -8,7 +8,7 @@ const HeroSidePanel = ({ visible }) => (
           <div className="pc-role">Now: PM @ Stripe</div>
         </div>
       </div>
-      <p className="pc-quote">"3 offers in 5 months. Stripe was my dream — I thought it was impossible."</p>
+      <p className="pc-quote">"3 offers in 5 months. Stripe was my dream, I thought it was impossible."</p>
       <div className="pc-stars">★★★★★</div>
     </div>
 

@@ -3,7 +3,7 @@ export const painPoints = [
     index: "01",
     title: "Feeling Stuck in a Dead-End Role",
     description:
-      "You've climbed as high as marketing will take you — but the ceiling is low, the growth is slow, and the work stopped feeling meaningful years ago. You know you're capable of more.",
+      "You've climbed as high as marketing will take you, but the ceiling is low, the growth is slow, and the work stopped feeling meaningful years ago. You know you're capable of more.",
     highlights: ["Promotions plateau at Director level", "Same work, different year", "No path to $150K+"],
     accentColor: "#C0392B",
     accentDim: "rgba(192,57,43,0.08)",

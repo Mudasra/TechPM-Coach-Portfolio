@@ -10,7 +10,7 @@ const FAQHeader = ({ visible }) => (
       <br />Thinking Right Now
     </h2>
     <p className="faq-sub">
-      Every doubt is valid — and every one has a clear answer.
+      Every doubt is valid, and every one has a clear answer.
     </p>
   </div>
 );
