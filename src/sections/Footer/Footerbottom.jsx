@@ -7,7 +7,7 @@ const FooterBottom = ({ year }) => (
     </div>
     <div className="footer-made">
       <span className="footer-made-diamond" aria-hidden="true">◆</span>
-      Built for marketers ready to make the leap
+      Developed & Coded by Mudasra
     </div>
   </div>
 );
