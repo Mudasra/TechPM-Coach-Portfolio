@@ -68,7 +68,7 @@ const WhileYouWait = ({ visible }) => (
 
     <div className="grid md:grid-cols-2 gap-4">
       {prepItems.map((item, i) => (
-        <prepItem key={i} label={item.label} desc={item.desc} />
+        <PrepItem key={i} label={item.label} desc={item.desc} />
       ))}
     </div>
   </div>
