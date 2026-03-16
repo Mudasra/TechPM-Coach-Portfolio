@@ -9,22 +9,12 @@ import PainBackground from "./Painbackground";
 const PainPoints = () => {
   const sectionRef = useRef(null);
   const [vis, setVis] = useState(false);
-  const [cardVis, setCardVis] = useState([false, false, false]);
 
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
           setVis(true);
-          painPoints.forEach((_, i) => {
-            setTimeout(() => {
-              setCardVis((prev) => {
-                const next = [...prev];
-                next[i] = true;
-                return next;
-              });
-            }, i * 140);
-          });
           obs.disconnect();
         }
       },
@@ -49,7 +39,7 @@ const PainPoints = () => {
 
           <div className="pain-grid" role="list">
             {painPoints.map((p, i) => (
-              <PainCard key={i} p={p} index={i} visible={cardVis[i]} />
+              <PainCard key={i} p={p} index={i} visible={vis} />
             ))}
           </div>
 

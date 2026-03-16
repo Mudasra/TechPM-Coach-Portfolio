@@ -12,7 +12,6 @@ const Testimonials = () => {
   const status = useSelector(selectTestimonialsStatus);
   const sectionRef = useRef(null);
   const [vis, setVis] = useState(false);
-  const [cardVis, setCardVis] = useState([false, false, false]);
 
   useEffect(() => {
     if (status === "idle") dispatch(fetchTestimonials());
@@ -22,13 +21,8 @@ const Testimonials = () => {
     const obs = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
-          setVis(true);
-          [0, 1, 2].forEach((i) =>
-            setTimeout(() => {
-              setCardVis((prev) => { const n = [...prev]; n[i] = true; return n; });
-            }, i * 140)
-          );
-          obs.disconnect();
+          setVis(true)
+          obs.disconnect()
         }
       },
       { threshold: 0, rootMargin: '0px 0px -50px 0px' }
@@ -38,21 +32,18 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <>
-      <section
-        id="testimonials"
-        className="testi-section"
-        aria-label="Client testimonials"
-        ref={sectionRef}
-      >
-        <TestimonialsBackground />
-
-        <div className="testi-inner">
-          <TestimonialsHeader visible={vis} />
-          <TestimonialsGrid status={status} testimonials={testimonials} cardVis={cardVis} />
-        </div>
-      </section>
-    </>
+    <section
+      id="testimonials"
+      className="testi-section"
+      aria-label="Client testimonials"
+      ref={sectionRef}
+    >
+      <TestimonialsBackground />
+      <div className="testi-inner">
+        <TestimonialsHeader visible={vis} />
+        <TestimonialsGrid status={status} testimonials={testimonials} vis={vis} />
+      </div>
+    </section>
   );
 };
 
